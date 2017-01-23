@@ -45,9 +45,11 @@ namespace DOTA_CUE
 				{
 					case Dota2GSI.Nodes.PlayerTeam.Dire:
 						isDire = true;
+						inGame = true;
 						break;
 					case Dota2GSI.Nodes.PlayerTeam.Radiant:
 						isDire = false;
+						inGame = true;
 						break;
 					default:
 						inGame = false;
@@ -66,8 +68,6 @@ namespace DOTA_CUE
 		/// <returns></returns>
 		public static T clampValue<T>(T i, T lower, T upper) where T : IComparable
 		{
-			int upperTest = i.CompareTo(upper);
-			int lowerTest = i.CompareTo(lower);
 			if (i.CompareTo(upper) > 0)
 				return upper;
 			else if (i.CompareTo(lower) < 0)
